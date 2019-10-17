@@ -70,8 +70,8 @@ class CalcData:
 
     def cleaner(self):
         """Método que limpa a informação recebida, deixando apenas números"""
-        self.year = int(sub('\D', '', str(self.year)))
-
+        clean = sub('\D', '', str(self.year))
+        self.year = int(clean) if clean != '' else 0
 
 if __name__ == '__main__':
     if argv[1:]:
